@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Twoje konto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-right">
+    <a href="/members/{{ user.username }}">
+        <button class="table-btn">Tabela</button>
+    </a>
+</div>
+
+
+<div class="container">
+    <h2>Twoje konto</h2>
+    <p><strong>Login:</strong> {{ user.username }}</p>
+    <p><strong>PP:</strong> {{ user.pp }}</p>
+
+    <hr>
+
+    <h3>Przelej PP</h3>
+    <form method="POST" action="{{ url_for('transfer') }}">
+        <input type="hidden" name="sender" value="{{ user.username }}">
+        <input type="password" name="password" placeholder="Hasło konta" required>
+        <input type="text" name="receiver" placeholder="Login odbiorcy" required>
+        <input type="number" name="amount" placeholder="Ilość PP" min="1" required>
+        <button type="submit">Przelej PP</button>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <p style="text-align:center;">
+        <a href="/">Wyloguj</a>
+    </p>
+</div>
+<div class="game-box">
+    <h3>Kółko i Krzyżyk</h3>
+    <p>
+        Koszt gry: <b>1 PP</b><br>
+        Wygrana: <b>+2 PP</b><br>
+        Przegrana / remis: brak nagrody
+    </p>
+    <a href="/tictactoe/{{ user.username }}">
+        <button>Zagraj</button>
+    </a>
+</div>
+
+<div class="game-box">
+    <h3>Wisielec</h3>
+    <p>
+        Koszt gry: <b>1 PP</b><br>
+        Wygrana: <b>+5 PP</b><br>
+        Przegrana: brak nagrody
+    </p>
+    <a href="/hangman/{{ user.username }}">
+        <button>Zagraj</button>
+    </a>
+</div>
+
+<div class="content">
+    <h1>Twoje konto</h1>
+    <p><strong>Login:</strong> {{ user.username }}</p>
+    <p><strong>Pozytywne Punkty (PP):</strong> {{ user.pp }}</p>
+
+    {% if message %}
+        <p style="color:red;">{{ message }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przelew PP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Przelew PP</h2>
+
+    <form method="POST">
+        <input type="text" name="sender" placeholder="Twoje konto" required>
+        <input type="text" name="receiver" placeholder="Konto odbiorcy" required>
+        <input type="number" name="amount" placeholder="Ilość PP" min="1" required>
+        <button type="submit">Przelej PP</button>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <p style="text-align:center;">
+        <a href="/">Powrót na stronę główną</a>
+    </p>
+</div>
+
+</body>
+</html>

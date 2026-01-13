@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kółko i krzyżyk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        .cell button {
+            width: 100%;
+            height: 80px;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kółko i krzyżyk</h1>
+
+    <form method="POST">
+        <div class="board">
+            {% for cell in board %}
+            <div class="cell">
+                {% if cell == '' %}
+                    <button type="submit" name="move" value="{{ loop.index0 }}"></button>
+                {% else %}
+                    <button disabled>{{ cell }}</button>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <button onclick="location.href='{{ url_for('account', username=username) }}'">
+        ← Powrót do konta
+    </button>
+</div>
+
+</body>
+</html>
