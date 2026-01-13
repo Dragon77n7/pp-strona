@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking członków</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Ranking członków</h1>
+
+    <table style="width:100%; border-collapse: collapse;">
+        <tr>
+            <th style="text-align:left;">Miejsce</th>
+            <th style="text-align:left;">Login</th>
+            <th style="text-align:left;">PP</th>
+        </tr>
+        {% for user in members %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.pp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <button onclick="location.href='{{ url_for('account', username=username) }}'">
+        ← Powrót do konta
+    </button>
+</div>
+
+</body>
+</html>

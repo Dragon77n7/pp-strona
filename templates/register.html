@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Rejestracja</h2>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Login" required>
+        <input type="password" name="password" placeholder="Hasło" required>
+        <button type="submit">Zarejestruj się</button>
+    </form>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <p style="text-align:center;">
+        Masz już konto? <a href="/login">Zaloguj się</a>
+    </p>
+    <p style="text-align:center;">
+        <a href="/">Powrót na stronę główną</a>
+    </p>
+</div>
+
+</body>
+</html>
