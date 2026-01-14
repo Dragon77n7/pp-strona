@@ -249,7 +249,21 @@ hangman_words = ["domki","kwiat","rycer","woda","księżyc","rower","jabłko","z
                  "serce","dźwięk","śnieg","stół","drzewo","jabłoń","okno","mleko","krzak","ptaki",
                  "oko","ziemi","miłość","kreda","palma","liść","nosić","rybak","góry","smok",
                  "kwiatki","rowerek","wiosna","zegarek","domowy","jabłecznik","królestwo","mosty",
-                 "piłkarz","wiatrak","chlebek","trampolina","słońce","piekarz"]
+                 "piłkarz","wiatrak","chlebek","trampolina","słońce","piekarz","kot","kotek","pies","piesek","mysz","myszka","koń","krowa","owca","koza",
+"kura","kogut","ryba","żaba","ptaszek","bocian","wróbel","sowa","lis","wilk",
+"niedźwiedź","zając","jeleń","sarna","dzik","foka","delfin","wieloryb","rekin","meduza",
+"muszla","piasek","plaża","wydma","las","łąka","pole","rzeka","strumień","jezioro",
+"staw","wodospad","chmura","deszcz","burza","tęcza","mgła","mróz","lód","kamień",
+"skała","piaseczek","glina","ziemia","ogród","ogórek","pomidor","ziemniak","cebula","czosnek",
+"sałata","gruszka","śliwka","wiśnia","czereśnia","banan","pomarańcza","cytryna","truskawka","malina",
+"borówka","jagoda","arbuz","melon","grzyb","pieczarka","borowik","muchomor","kapelusz","czapka",
+"szalik","rękawica","but","kalosz","kurtka","płaszcz","koszula","spodnie","spódnica","sukienka",
+"pasek","zegarmistrz","nauczyciel","uczeń","szkoła","klasa","zeszyt","książka","długopis","ołówek",
+"pióro","kredki","farby","pędzel","obraz","rzeźba","muzeum","teatr","kino","scena",
+"aktor","artysta","muzyk","skrzypce","gitara","pianino","trąbka","perkusja","melodia","rytm",
+"taniec","balet","opera","koncert","festyn","jarmark","targ","sklep","stragan","kasa",
+"moneta","banknot","portfel","klucz","zamek","drzwi","klamka","schody","sufit","podłoga",
+"dywan","zasłona","firanka","lustro","obrazek","ramka"]
 
 hangman_games = {}
 @app.route('/hangman/<username>', methods=['GET','POST'])
@@ -303,5 +317,6 @@ def play_hangman(username):
 
 if __name__ == "__main__":
     app.run()
+
 
 
