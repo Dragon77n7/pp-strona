@@ -244,12 +244,12 @@ def play_tictactoe(username):
 
 
 # --- WISIELEC ---
-hangman_words = ["domki","kwiat","rycer","woda","księź","rower","jabłk","zegar","miasto","laska",
-                 "owoce","mosty","piesi","wiatr","chleb","torba","słoń","marche","lampa","morze",
-                 "serce","dźwię","śnieg","stół","drzew","jabło","okno","mleko","krzak","ptaki",
+hangman_words = ["domki","kwiat","rycer","woda","księżyc","rower","jabłko","zegar","miasto","laska",
+                 "owoce","mosty","piesi","wiatr","chleb","torba","słoń","marchew","lampa","morze",
+                 "serce","dźwięk","śnieg","stół","drzewo","jabłoń","okno","mleko","krzak","ptaki",
                  "oko","ziemi","miłość","kreda","palma","liść","nosić","rybak","góry","smok",
-                 "kwiatki","rowerek","wiosna","zegarek","domowy","jabłecz","królest","mostowy",
-                 "piłkarz","wiatrak","chlebek","torbany","słońce"]
+                 "kwiatki","rowerek","wiosna","zegarek","domowy","jabłecznik","królestwo","mosty",
+                 "piłkarz","wiatrak","chlebek","trampolina","słońce","piekarz"]
 
 hangman_games = {}
 @app.route('/hangman/<username>', methods=['GET','POST'])
@@ -303,4 +303,5 @@ def play_hangman(username):
 
 if __name__ == "__main__":
     app.run()
+
 
